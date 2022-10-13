@@ -1,9 +1,11 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	{"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
+    {"\ufa7d: ", "pamixer --get-volume", 1, 0},
 
-	{"", "date '+%b %d (%a) %I:%M%p'",					5,		0},
+	{"\uf578: ", "cat /sys/class/power_supply/BAT0/capacity",	30,		0},
+
+	{"", "date +'%a, %d %b, %I:%M %p'",					30,		0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
