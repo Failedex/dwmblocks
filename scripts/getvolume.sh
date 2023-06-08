@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | grep "yes")
+MUTED=$(pacmd list-sinks | awk '/muted/ { print $2 }' | grep "no")
 
-if [[ -n $muted ]]
-then
-    echo "Muted"
+if [[ -z "$MUTED" ]]; then
+    echo "^c#f38ba8^ 󰝟  Muted "
 else 
+    echo -n "^c#f38ba8^ 󰕾  "
     amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'  
 fi
