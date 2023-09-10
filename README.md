@@ -1,4 +1,4 @@
-## dwmblocks
+# dwmblocks
 Modular status bar for dwm written in c.
 
 This is best used with my dwm build, found [here](https://github.com/Failedex/dwm)
